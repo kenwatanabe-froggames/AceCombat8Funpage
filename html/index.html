@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC8 機体レベルアップ一覧</title>
+<meta name="description" content="機体を選ぶと、Lv.1〜20 ごとの搭載弾数と上昇項目を表示します。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <h1>AC8 機体レベルアップ一覧</h1>
+  <p class="sub">機体を選ぶと、Lv.1〜20 ごとの搭載弾数と上昇項目が表示されます。</p>
+</header>
+
+<main>
+  <section class="picker" aria-label="機体の選択">
+    <label for="sel">機体</label>
+    <select id="sel"></select>
+    <div id="chips" class="chips" role="tablist"></div>
+  </section>
+
+  <section id="summary" class="summary" aria-live="polite"></section>
+
+  <section class="controls">
+    <label class="chk"><input type="checkbox" id="onlySpecial"> 特殊な強化項目だけ表示</label>
+    <label class="chk"><input type="checkbox" id="onlyChange"> 弾数が変わった行をハイライト</label>
+  </section>
+
+  <div class="tablewrap">
+    <table id="tbl">
+      <thead id="thead"></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <p class="note">
+    画面録画から読み取ったデータです。項目名の右端が切れて読めなかったもの(【 】付きの一部)は、レベル表記を省いています。
+    性能バー(SPEED など)は数値が出ないため含めていません。(2種)は「2種搭載時」の意味です。
+  </p>
+</main>
+
+<script src="data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
