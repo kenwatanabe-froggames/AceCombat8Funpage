@@ -9,6 +9,12 @@
   var onlySpecial = document.getElementById('onlySpecial');
   var onlyChange = document.getElementById('onlyChange');
   var current = null;
+  var abChips = document.getElementById('abChips');
+  var abResults = document.getElementById('abResults');
+  var abClear = document.getElementById('abClear');
+  var selected = {};          // アビリティ名 -> true
+  var abMap = {};             // アビリティ名 -> { 機体id: 解放Lv }
+  var mode = 'and';
 
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -20,6 +26,86 @@
   // 特殊な強化項目(弾数増加などの通常項目以外)
   function isSpecial(t) {
     return /【|Lv\.\s*\d|アビリティ|強化|補正|軽減|短縮/.test(t) && !/^AIRCRAFT SPEC/.test(t);
+  }
+
+  function abName(t) { return t.replace(/\s*Lv\.\d+$/, ''); }
+  function isAbility(t) { return isSpecial(t) && t.indexOf('アビリティスロット') < 0; }
+
+  function buildAbMap() {
+    data.forEach(function (a) {
+      a.levels.forEach(function (r) {
+        r.up.forEach(function (t) {
+          if (!isAbility(t)) return;
+          var n = abName(t);
+          if (!abMap[n]) abMap[n] = {};
+          if (abMap[n][a.id] == null) abMap[n][a.id] = r.lv;
+        });
+      });
+    });
+  }
+
+  function selectedNames() { return Object.keys(selected).filter(function (k) { return selected[k]; }); }
+
+  function matchIds() {
+    var names = selectedNames();
+    if (!names.length) return null;
+    return data.filter(function (a) {
+      var has = names.map(function (n) { return abMap[n] && abMap[n][a.id] != null; });
+      return mode === 'and' ? has.every(Boolean) : has.some(Boolean);
+    }).map(function (a) { return a.id; });
+  }
+
+  function buildAbChips() {
+    var names = Object.keys(abMap).sort(function (x, y) {
+      var d = Object.keys(abMap[y]).length - Object.keys(abMap[x]).length;
+      return d || x.localeCompare(y, 'ja');
+    });
+    names.forEach(function (n) {
+      var b = el('button', 'abchip', n);
+      b.type = 'button';
+      b.setAttribute('aria-pressed', 'false');
+      b.appendChild(el('span', 'n', Object.keys(abMap[n]).length + '機'));
+      b.addEventListener('click', function () {
+        selected[n] = !selected[n];
+        b.setAttribute('aria-pressed', selected[n] ? 'true' : 'false');
+        refreshFinder();
+      });
+      abChips.appendChild(b);
+    });
+  }
+
+  function refreshFinder() {
+    var ids = matchIds();
+    var names = selectedNames();
+    abResults.textContent = '';
+    if (ids) {
+      if (!ids.length) abResults.appendChild(el('div', 'empty', '条件に合う機体はありません。'));
+      ids.forEach(function (id) {
+        var a = find(id);
+        var card = el('button', 'rescard');
+        card.type = 'button';
+        card.appendChild(el('div', 'nm', a.name));
+        var ul = el('ul');
+        names.forEach(function (n) {
+          if (abMap[n] && abMap[n][id] != null) {
+            var li = el('li');
+            li.appendChild(el('b', null, 'Lv.' + abMap[n][id]));
+            li.appendChild(document.createTextNode(n));
+            ul.appendChild(li);
+          }
+        });
+        card.appendChild(ul);
+        card.addEventListener('click', function () {
+          show(id, true);
+          document.getElementById('summary').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        abResults.appendChild(card);
+      });
+    }
+    Array.prototype.forEach.call(chips.children, function (c) {
+      c.classList.toggle('dim', !!ids && ids.indexOf(c.dataset.id) < 0);
+    });
+    if (current) render(current);
   }
 
   function find(id) {
@@ -104,7 +190,7 @@
         up.appendChild(el('span', 'none', onlySpecial.checked ? '—' : 'なし'));
       } else {
         items.forEach(function (t) {
-          var cls = 'tag' + (isSpecial(t) ? ' sp' : '');
+          var cls = 'tag' + (isSpecial(t) ? ' sp' : '') + (selected[abName(t)] ? ' hit' : '');
           up.appendChild(el('span', cls, t));
         });
       }
@@ -130,6 +216,16 @@
   }
 
   buildPicker();
+  buildAbMap();
+  buildAbChips();
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="mode"]'), function (r) {
+    r.addEventListener('change', function () { mode = r.value; refreshFinder(); });
+  });
+  abClear.addEventListener('click', function () {
+    selected = {};
+    Array.prototype.forEach.call(abChips.children, function (b) { b.setAttribute('aria-pressed', 'false'); });
+    refreshFinder();
+  });
   onlySpecial.addEventListener('change', function () { render(current); });
   onlyChange.addEventListener('change', function () { render(current); });
   window.addEventListener('hashchange', function () {

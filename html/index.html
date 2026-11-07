@@ -20,6 +20,20 @@
     <div id="chips" class="chips" role="tablist"></div>
   </section>
 
+  <section class="finder" aria-label="アビリティで探す">
+    <details id="finder" open>
+      <summary>アビリティで機体を探す</summary>
+      <p class="hint">気になるアビリティを選ぶと、持っている機体と解放されるレベルが表示されます。(アビリティスロット解放は全機体にあるため除いています)</p>
+      <div class="mode">
+        <label><input type="radio" name="mode" value="and" checked> すべて持つ機体</label>
+        <label><input type="radio" name="mode" value="or"> どれかを持つ機体</label>
+        <button type="button" id="abClear" class="link">選択をクリア</button>
+      </div>
+      <div id="abChips" class="abchips"></div>
+      <div id="abResults" class="abresults" aria-live="polite"></div>
+    </details>
+  </section>
+
   <section id="summary" class="summary" aria-live="polite"></section>
 
   <section class="controls">
