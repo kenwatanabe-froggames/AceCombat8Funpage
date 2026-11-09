@@ -4409,5 +4409,399 @@ window.AC8_DATA = [
     ]
    }
   ]
+ },
+ {
+  "id": "FA-36",
+  "name": "FA-36",
+  "cost": 1950,
+  "role": "fighter",
+  "cols": [
+   "GUN",
+   "MSL",
+   "SASM",
+   "HPAA",
+   "SOD",
+   "FLR"
+  ],
+  "levels": [
+   {
+    "lv": 1,
+    "cap": 5,
+    "ammo": {
+     "GUN": 1000,
+     "MSL": 118,
+     "SASM": 20,
+     "HPAA": null,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "なし"
+    ]
+   },
+   {
+    "lv": 2,
+    "cap": 5,
+    "ammo": {
+     "GUN": 1044,
+     "MSL": 122,
+     "SASM": 20,
+     "HPAA": null,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL"
+    ]
+   },
+   {
+    "lv": 3,
+    "cap": 5,
+    "ammo": {
+     "GUN": 1089,
+     "MSL": 126,
+     "SASM": 20,
+     "HPAA": null,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "HPAA"
+    ]
+   },
+   {
+    "lv": 4,
+    "cap": 5,
+    "ammo": {
+     "GUN": 1133,
+     "MSL": 130,
+     "SASM": 22,
+     "HPAA": null,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "SASM",
+     "SOD"
+    ]
+   },
+   {
+    "lv": 5,
+    "cap": 5,
+    "ammo": {
+     "GUN": 1178,
+     "MSL": 132,
+     "SASM": 22,
+     "HPAA": null,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "HPAA",
+     "SASM(2種)",
+     "HPAA(2種)",
+     "SOD(2種)",
+     "SASM【爆発範囲特化】 Lv.1",
+     "アビリティスロット解放"
+    ]
+   },
+   {
+    "lv": 6,
+    "cap": 10,
+    "ammo": {
+     "GUN": 1222,
+     "MSL": 136,
+     "SASM": 22,
+     "HPAA": 32,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL"
+    ]
+   },
+   {
+    "lv": 7,
+    "cap": 10,
+    "ammo": {
+     "GUN": 1267,
+     "MSL": 138,
+     "SASM": 24,
+     "HPAA": 34,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "SASM",
+     "HPAA",
+     "SOD"
+    ]
+   },
+   {
+    "lv": 8,
+    "cap": 10,
+    "ammo": {
+     "GUN": 1311,
+     "MSL": 140,
+     "SASM": 24,
+     "HPAA": 34,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "対空攻撃補正【Fighter】 Lv.1"
+    ]
+   },
+   {
+    "lv": 9,
+    "cap": 10,
+    "ammo": {
+     "GUN": 1356,
+     "MSL": 142,
+     "SASM": 24,
+     "HPAA": 34,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL"
+    ]
+   },
+   {
+    "lv": 10,
+    "cap": 10,
+    "ammo": {
+     "GUN": 1400,
+     "MSL": 144,
+     "SASM": 26,
+     "HPAA": 36,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "SASM",
+     "HPAA",
+     "SOD",
+     "SASM(2種)",
+     "HPAA(2種)",
+     "SOD(2種)"
+    ]
+   },
+   {
+    "lv": 11,
+    "cap": 15,
+    "ammo": {
+     "GUN": 1447,
+     "MSL": 146,
+     "SASM": 26,
+     "HPAA": 36,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "対空兵装【射程延長】 Lv.1"
+    ]
+   },
+   {
+    "lv": 12,
+    "cap": 15,
+    "ammo": {
+     "GUN": 1493,
+     "MSL": 148,
+     "SASM": 26,
+     "HPAA": 38,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "HPAA"
+    ]
+   },
+   {
+    "lv": 13,
+    "cap": 15,
+    "ammo": {
+     "GUN": 1540,
+     "MSL": 150,
+     "SASM": 28,
+     "HPAA": 38,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "SASM",
+     "SOD"
+    ]
+   },
+   {
+    "lv": 14,
+    "cap": 15,
+    "ammo": {
+     "GUN": 1587,
+     "MSL": 152,
+     "SASM": 28,
+     "HPAA": 40,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "HPAA",
+     "特殊兵装【速射特化】 Lv.1"
+    ]
+   },
+   {
+    "lv": 15,
+    "cap": 15,
+    "ammo": {
+     "GUN": 1633,
+     "MSL": 152,
+     "SASM": 28,
+     "HPAA": 40,
+     "SOD": null,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "SASM(2種)",
+     "HPAA(2種)",
+     "SOD(2種)",
+     "アビリティスロット解放"
+    ]
+   },
+   {
+    "lv": 16,
+    "cap": 20,
+    "ammo": {
+     "GUN": 1680,
+     "MSL": 154,
+     "SASM": 30,
+     "HPAA": 40,
+     "SOD": 36,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "SASM",
+     "SOD"
+    ]
+   },
+   {
+    "lv": 17,
+    "cap": 20,
+    "ammo": {
+     "GUN": 1727,
+     "MSL": 156,
+     "SASM": 30,
+     "HPAA": 42,
+     "SOD": 36,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "HPAA",
+     "MSL強化 Lv.1"
+    ]
+   },
+   {
+    "lv": 18,
+    "cap": 20,
+    "ammo": {
+     "GUN": 1773,
+     "MSL": 158,
+     "SASM": 30,
+     "HPAA": 42,
+     "SOD": 36,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL"
+    ]
+   },
+   {
+    "lv": 19,
+    "cap": 20,
+    "ammo": {
+     "GUN": 1820,
+     "MSL": 158,
+     "SASM": 30,
+     "HPAA": 42,
+     "SOD": 36,
+     "FLR": 2
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN"
+    ]
+   },
+   {
+    "lv": 20,
+    "cap": 20,
+    "ammo": {
+     "GUN": 1867,
+     "MSL": 160,
+     "SASM": 32,
+     "HPAA": 44,
+     "SOD": 38,
+     "FLR": 4
+    },
+    "up": [
+     "AIRCRAFT SPEC +",
+     "GUN",
+     "MSL",
+     "チャフ・フレア搭載数増加",
+     "SASM",
+     "HPAA",
+     "SOD",
+     "SASM(2種)",
+     "HPAA(2種)",
+     "SOD(2種)",
+     "FA-36【チャフ・フレア強化】 Lv.1",
+     "アビリティスロット解放"
+    ]
+   }
+  ]
  }
 ];
