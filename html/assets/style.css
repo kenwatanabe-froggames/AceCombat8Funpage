@@ -99,3 +99,49 @@ td.num.chg{background:var(--chg); font-weight:700}
 .rescard li b{color:var(--text); margin-right:6px}
 .chip.dim{opacity:.35}
 .tag.hit{box-shadow:0 0 0 2px var(--accent); }
+
+/* role colors */
+:root{
+  --fighter:#4aa8ff; --multirole:#e45fe0; --attacker:#ff5d52; --electronic:#46d37c;
+}
+.role-fighter{--rc:var(--fighter)}
+.role-multirole{--rc:var(--multirole)}
+.role-attacker{--rc:var(--attacker)}
+.role-electronic{--rc:var(--electronic)}
+
+.nav{margin-top:8px; font-size:.88rem}
+.nav a{color:var(--accent)}
+
+.legend{display:flex; flex-wrap:wrap; gap:8px; margin:12px 0}
+.rolebtn{
+  background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:999px;
+  padding:5px 14px; font-size:.88rem; cursor:pointer;
+}
+.rolebtn[class*="role-"]{border-color:var(--rc); color:var(--rc)}
+.rolebtn[aria-pressed="true"]{background:var(--rc, var(--accent)); color:#07181d; font-weight:700; border-color:var(--rc, var(--accent))}
+.rolebtn.all[aria-pressed="true"]{background:var(--accent); color:#06231f}
+
+.ltbl{min-width:900px}
+.ltbl th.l, .ltbl td.l{text-align:left}
+.ltbl thead th.s{font-weight:400; font-size:.72rem}
+.ltbl td.nm{white-space:nowrap; font-weight:700; color:var(--rc)}
+.ltbl td.nm small{font-weight:400; color:var(--muted); margin-left:4px; font-size:.78rem}
+.ltbl td.rl{text-align:center; font-size:.8rem; color:var(--rc); white-space:nowrap}
+.ltbl td.wp{text-align:center; font-weight:600}
+.ltbl td.note{font-size:.8rem; color:var(--muted)}
+.ltbl tbody tr{box-shadow:inset 4px 0 0 var(--rc)}
+.ltbl tbody tr:nth-child(even){background:rgba(255,255,255,.02)}
+.dot{display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--rc); margin-right:8px}
+
+.costs{margin-top:22px}
+.costs h2{font-size:1rem; margin:0 0 8px}
+.mini{min-width:0; width:auto; border:1px solid var(--line); border-radius:8px; overflow:hidden}
+.mini th, .mini td{padding:6px 14px; font-size:.85rem; text-align:right}
+.mini thead th{background:#0f2a33}
+.mini tbody th{text-align:left; color:var(--muted); font-weight:600; background:transparent; position:static}
+.foot{color:var(--muted); font-size:.82rem; padding-left:1.2em}
+
+/* role marks on the per-aircraft page */
+.chip[data-role]{border-left:4px solid var(--rc)}
+.chip[aria-selected="true"][data-role]{border-left-color:#06231f}
+.card.rolecard .v{color:var(--rc)}

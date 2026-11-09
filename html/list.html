@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>機体一覧(コスト順) | AC8</title>
+<meta name="description" content="オンライン機体の装備、チャフ・フレア数、コストを機種別に色分けした一覧です。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <h1>機体一覧(コスト順)</h1>
+  <p class="sub">オンライン機体の装備とチャフ・フレア数。DLC 機は最後に記載しています。</p>
+  <nav class="nav"><a href="./">← 機体ごとのレベルアップ表へ</a></nav>
+</header>
+
+<main>
+  <section class="legend" id="legend" aria-label="機種で絞り込み"></section>
+
+  <div class="tablewrap">
+    <table id="ltbl" class="ltbl">
+      <thead>
+        <tr>
+          <th rowspan="2" class="l">機体名</th>
+          <th rowspan="2">機種</th>
+          <th rowspan="2">コスト</th>
+          <th>武装1</th><th>武装2</th><th>武装3</th>
+          <th colspan="4">チャフ・フレア</th>
+          <th rowspan="2" class="l">備考</th>
+        </tr>
+        <tr>
+          <th class="s">初期</th><th class="s">LV10開放</th><th class="s">LV20開放</th>
+          <th class="s">初期弾数</th><th class="s">増加LV</th><th class="s">増加アビリティ</th><th class="s">アビリティ+LV20</th>
+        </tr>
+      </thead>
+      <tbody id="lbody"></tbody>
+    </table>
+  </div>
+
+  <section class="costs">
+    <h2>LV20開放までの必要数</h2>
+    <table class="mini">
+      <thead><tr><th></th><th>コスト200〜700</th><th>コスト950〜1450</th><th>コスト1700〜1950</th></tr></thead>
+      <tbody>
+        <tr><th>規格外改修設計図</th><td>10</td><td>30</td><td>60</td></tr>
+        <tr><th>改修設計図</th><td>50</td><td>100</td><td>150</td></tr>
+        <tr><th>ZOLL</th><td>50,000</td><td>100,000</td><td>150,000</td></tr>
+      </tbody>
+    </table>
+    <ul class="foot">
+      <li>MiG-21bis(フィッシュベッド)のみ例外で、コスト950〜1450の扱いです。</li>
+      <li>すべての機体は LV20 でチャフ・フレア数が +2 されます(一部の機種は LV10 から)。</li>
+    </ul>
+  </section>
+</main>
+
+<script src="list-data.js"></script>
+<script src="assets/list.js"></script>
+</body>
+</html>

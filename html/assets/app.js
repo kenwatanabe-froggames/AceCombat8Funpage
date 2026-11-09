@@ -118,7 +118,8 @@
       var o = el('option', null, a.name);
       o.value = a.id;
       sel.appendChild(o);
-      var c = el('button', 'chip', a.name);
+      var c = el('button', 'chip role-' + a.role, a.name);
+      c.dataset.role = a.role;
       c.type = 'button';
       c.setAttribute('role', 'tab');
       c.dataset.id = a.id;
@@ -139,6 +140,12 @@
 
   function renderSummary(a) {
     summary.textContent = '';
+    var RL = { fighter: '戦闘機', multirole: '多用途機', attacker: '攻撃機', electronic: '電子戦機' };
+    if (a.role) {
+      var rc = card('機種', RL[a.role] || a.role);
+      rc.className = 'card rolecard role-' + a.role;
+      summary.appendChild(rc);
+    }
     if (a.cost != null) summary.appendChild(card('COST', String(a.cost)));
     var first = a.levels[0], last = a.levels[a.levels.length - 1];
     summary.appendChild(card('最大レベル', 'Lv.' + last.cap));

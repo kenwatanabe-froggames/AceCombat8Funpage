@@ -3,6 +3,7 @@ window.AC8_DATA = [
   "id": "A-10C",
   "name": "A-10C",
   "cost": 1200,
+  "role": "attacker",
   "cols": [
    "GUN",
    "MSL",
@@ -408,6 +409,7 @@ window.AC8_DATA = [
   "id": "EA-18G",
   "name": "EA-18G",
   "cost": 1700,
+  "role": "electronic",
   "cols": [
    "GUN",
    "MSL",
@@ -805,6 +807,7 @@ window.AC8_DATA = [
   "id": "F-4E",
   "name": "F-4E",
   "cost": 200,
+  "role": "multirole",
   "cols": [
    "GUN",
    "MSL",
@@ -1230,6 +1233,7 @@ window.AC8_DATA = [
   "id": "F-14A",
   "name": "F-14A",
   "cost": 450,
+  "role": "fighter",
   "cols": [
    "GUN",
    "MSL",
@@ -1627,6 +1631,7 @@ window.AC8_DATA = [
   "id": "F-14D",
   "name": "F-14D",
   "cost": 700,
+  "role": "fighter",
   "cols": [
    "GUN",
    "MSL",
@@ -2017,6 +2022,7 @@ window.AC8_DATA = [
   "id": "F-15E",
   "name": "F-15E",
   "cost": 1700,
+  "role": "attacker",
   "cols": [
    "GUN",
    "MSL",
@@ -2410,6 +2416,7 @@ window.AC8_DATA = [
   "id": "Rafale-M",
   "name": "Rafale M",
   "cost": 1700,
+  "role": "multirole",
   "cols": [
    "GUN",
    "MSL",
@@ -2806,6 +2813,7 @@ window.AC8_DATA = [
   "id": "MiG-21bis",
   "name": "MiG-21bis",
   "cost": 200,
+  "role": "fighter",
   "cols": [
    "GUN",
    "MSL",
@@ -3219,6 +3227,7 @@ window.AC8_DATA = [
   "id": "MiG-31B",
   "name": "MiG-31B",
   "cost": 950,
+  "role": "fighter",
   "cols": [
    "GUN",
    "MSL",
@@ -3616,6 +3625,7 @@ window.AC8_DATA = [
   "id": "Su-34",
   "name": "Su-34",
   "cost": 1450,
+  "role": "attacker",
   "cols": [
    "GUN",
    "MSL",
@@ -4009,6 +4019,7 @@ window.AC8_DATA = [
   "id": "ADFX-02-PIX",
   "name": "ADFX-02 -PIX-",
   "cost": 1950,
+  "role": "multirole",
   "cols": [
    "GUN",
    "MSL",
